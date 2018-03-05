@@ -25,6 +25,7 @@ var ArticleSchema = {
   created: {
     type: Date,
     default: Date.now
+    
   }
 }
 
