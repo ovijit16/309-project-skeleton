@@ -17,6 +17,7 @@ module.exports = function(app){
 
 
 app.param('articleId', articles.articleByID);
+app.param('/article/all').get(articles.listView);
 
 
-}
+};
