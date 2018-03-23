@@ -1,25 +1,31 @@
 <html>
     <head>
-        <title>New Article Form</title>
+        <title>New Product Form</title>
     </head>  
     <body>
-        <h1>Create new article</h1>
+        <h1>Create new product</h1>
         <p>Title:</p>
         <input type="text" id="title"/><br/>
-        <p>Content</p>
-        <textarea id="content">Add content </textarea><br/><br/>
+        <p>Description: </p>
+        <textarea id="content">Add description </textarea><br/><br/>
+        <p>Price:</p>
+        <input type="text" id="price"/><br/>
+        <p>Quantity:</p>
+        <input type="text" id="quantity"/><br/>
         <button id="submit">Submit</button>
         <script src="/lib/jquery/dist/jquery.min.js"></script>
         <script>
-        var newArticle = {title:"", content:""};
+        var newProduct = {title:"", description:"", price:"", quantity:""};
             $('#submit').click(function(){
                 console.log('submit clicked');
-                newArticle.title= $('#title').val();
-                newArticle.content = $('#content').val();
+                newProduct.title= $('#title').val();
+                newProduct.description = $('#content').val();
+                newProduct.price= $('#price').val();
+                newProduct.quantity = $('#quantity').val();
                 $.ajax({
                     method: "POST",
-                    url: "/api/articles",
-                    data: newArticle
+                    url: "/api/products",
+                    data: newProduct
                 }).done(function(response){
                     console.log(response);
                 }).fail(function(response){

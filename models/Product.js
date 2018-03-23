@@ -2,41 +2,32 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ProductSchema = {
 
-  name: {
+  title: {
     type: String,
     default: '',
     trim: true,
-    required: 'Name required'
+    required: 'Title required'
   },
-  
-   description: {
+
+  description: {
     type: String,
     default: '',
     trim: true,
-    required: 'Description required'
+    required: 'A short description required'
   },
-  
-   price: {
+
+  price: {
     type: Number,
     trim: true,
     required: 'Price required'
   },
   
-   quantitiy: {
+  quantity: {
     type: Number,
-    min: '1',
     trim: true,
     required: 'Quantity required'
   },
-
-  content: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Content required'
-
-  },
-
+  
   user: {
     type: Schema.ObjectId,
     ref: 'User'
@@ -45,7 +36,6 @@ var ProductSchema = {
   created: {
     type: Date,
     default: Date.now
-    
   }
 }
 

@@ -16,12 +16,8 @@ module.exports = function(app){
 	.put(users.requiresLogin, products.update);
 
 app.route('/products/all').get(products.listView);
-app.route('/products/new').get(products.creatView);
-//app.route('/article/:articleId').get(products.singleView);
-//app.route('/article/:articleId').get(products.singleView);
-
+app.route('/products/new').get(products.createView);
+app.route('/products/:productId').get(products.singleView);
 
 app.param('productId', products.productByID);
-
-
-};
+}
